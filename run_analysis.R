@@ -92,8 +92,8 @@ suy <- cbind(subjtot, ytot$activity_name)
 names(suy)[2] = "activity_name"
 totData <- cbind(suy, xtot)
 names(totData) <- sub("BodyBody", "Body", names(totData))
-names(totData) <- sub("^t", "Time", names(totData))
-names(totData) <- sub("^f", "Freqency", names(totData))
+names(totData) <- sub("^t", "time", names(totData))
+names(totData) <- sub("^f", "freqency", names(totData))
 gen_codebook("* Total combined dataset `totData` contains", as.character(nrow(totData)), "x", as.character(ncol(totData)), "elements!")
 
 ### Part 5:
