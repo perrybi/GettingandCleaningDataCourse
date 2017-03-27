@@ -18,3 +18,6 @@ The following list is the description summary of the project
 * `setwd()` to the proper directory with `run_analysis.R` file 
 * Outputs are: `tidyData.txt` and `codebook.md` files 
 
+## Additional resources
+Additional information about the data, variables and the transformations used could be found in the CodeBook.MD file.
+
