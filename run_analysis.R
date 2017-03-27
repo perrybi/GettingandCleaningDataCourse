@@ -103,6 +103,7 @@ gen_codebook("* Tidy dataset with the average of each variable for each activity
 totData <- data.table(totData)
 tidyData <- totData[, lapply(.SD, mean), by = "subject,activity_name"] 
 tidyData <- tidyData[order(subject)]
+#tidyData <- ddply(totData, .(subject, activity_name), function(x) colMeans(x[, 3:68]))
 gen_codebook("* Tidy dataset `tidyData` contains", as.character(nrow(tidyData)), "x" , as.character(ncol(tidyData)), "elements!")
 gen_codebook("* Write tidy data to `tidyData.txt`")
 write.table(tidyData, file = "tidyData.txt", row.name=FALSE)
