@@ -83,7 +83,8 @@ actData <- read.table(file.path(dirc, "activity_labels.txt"), header = FALSE)
 names(actData) <- c("activity_number", "activity_name")
 
 gen_codebook("* Merged `acitivity_labels.txt` with the corresponding `activity_name`, updating the data")
-ytot <- merge(ytot, actData, by = "activity_number")
+#ytot <- merge(ytot, actData, by = "activity_number")
+ytot[, 1] <- actData[ytot[, 1], 2]
 
 ### Part 4: 
 # Appropriately label the data set with descriptive variable names
